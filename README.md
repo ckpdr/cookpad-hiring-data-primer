@@ -1,1 +1,7 @@
-# cookpad-hiring-data-primer
+# Data Engineering Technical Exercise Primer
+
+This is a primer to prepare you for the Data Engineer Technical Exercise. Please read through this repo before the date of your exercise. This will minimise the amount of set-up time you need to do.
+
+You can find instructions on setting up the exercise prerequisites [here](PREREQUISITES.md).
+
+Guidelines to understand how the process works for the technical exercise [here](PROCESS.md).
