@@ -12,17 +12,18 @@ To work on the exercise, you will need:
 
 For the exercise, we have built a few images that will be used during the exercise. Please, follow the sections below to make sure you have access to the images and you are able to run them.
 
-1. Install `docker` command (if you don't have one)
-2. Pull docker images
-3. Check docker images
-
-## Docker Instalation
+## Install Docker
 
 Please install one for your OS from [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
 
 ### Pull docker images
 
-It is important to pull images before the start of exercise as this will download about 250MB of data.
+For the exercise, we will be using mainly 2 images:
+
+`data-engineering-technical-exercise-nginx`: Provides a Nginx server with the list and log data files
+`data-engineering-technical-exercise-postgre`: Provies a PostgreSQL server with a table, `pv_log`.
+
+To download the docker images:
 
 ```
 docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-nginx:latest
@@ -54,7 +55,12 @@ Pager usage is off.
 psql (13.2, server 13.3 (Debian 13.3-1.pgdg100+1))
 Type "help" for help.
 
-cookpad 14:44:08 #
+cookpad 13:48:03 # \dt
+         List of relations
+ Schema |  Name  | Type  |  Owner
+--------+--------+-------+---------
+ public | pv_log | table | cookpad
+(1 row)
 ```
 
 Note: If you don't have the `psql` command, please check connection with your SQL client.
