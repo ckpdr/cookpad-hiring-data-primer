@@ -52,4 +52,4 @@ To submit the exercise:
 ## Follow up
 
 1 hour call will be scheduled where the team will discuss the exercise with you, as well as other
-Data Engineering, and give you an opportunity to ask questions about Cookpad.
+Data Engineer, and give you an opportunity to ask questions about Cookpad.

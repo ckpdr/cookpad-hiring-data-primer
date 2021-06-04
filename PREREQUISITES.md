@@ -1,18 +1,22 @@
 # Prerequisites
 
-This is the prerequisites document for data engineer technical exercise.
+These are the prerequisites document for Cookpad's Data Engineering technical exercise.
 
-To work on the exercise, you will need Git, Docker, SQL client for PostgreSQL and development environment for at least one of Ruby, Python, Java.
+To work on the exercise, you will need:
+- Git 
+- Docker 
+- SQL client for PostgreSQL
+- A development environment with either Ruby, Python, Java, or Bash available.
 
 ## Docker
 
-Please follow the steps below.
+For the exercise, we have built a few images that will be used during the exercise. Please, follow the sections below to make sure you have access to the images and you are able to run them.
 
 1. Install `docker` command (if you don't have one)
 2. Pull docker images
 3. Check docker images
 
-### Install command
+## Docker Instalation
 
 Please install one for your OS from [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
 
@@ -65,11 +69,11 @@ Here is connection information:
 
 ## SQL Client for PostgreSQL
 
-Please setup your favorite one from internet.
+Please setup your choice of SQL client.
 
 ## Development environment
 
-Please use any of Ruby, Python, Java and Bash to work on the exercise.
+Make sure you have access to either Ruby, Python, Java, or Bash to work on the exercise.
 
 ### Ruby
 
