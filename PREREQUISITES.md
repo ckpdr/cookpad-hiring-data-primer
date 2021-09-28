@@ -18,31 +18,17 @@ Please install one for your OS from [https://docs.docker.com/get-docker/](https:
 
 ### Pull docker images
 
-For the exercise, we will be using mainly 2 images:
+For the exercise, we will be using mainly 1 image:
 
-`data-engineering-technical-exercise-nginx`: Provides a Nginx server with the list and log data files
 `data-engineering-technical-exercise-postgre`: Provies a PostgreSQL server with a table, `pv_log`.
 
 To download the docker images:
 
 ```
-docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-nginx:latest
 docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-postgre:latest
 ```
 
-### Check docker images
-
-Check nginx environment.
-
-```
-$ docker run -p 8080:80 public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-nginx:latest
-(open another terminal)
-$ curl http://localhost:8080/index.txt
-data_001.csv.gz
-data_002.csv.gz
-....
-data_100.csv.gz
-```
+### Check docker image
 
 Check PostgreSQL environment.
 
