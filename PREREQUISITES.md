@@ -20,7 +20,7 @@ Please install one for your OS from [https://docs.docker.com/get-docker/](https:
 
 For the exercise, we will be using mainly 1 image:
 
-`data-engineering-technical-exercise-postgre`: Provies a PostgreSQL server with a table, `pv_log`.
+`data-engineering-technical-exercise-postgre`: Provides a PostgreSQL server with a table, `pv_log`.
 
 To download the docker images:
 
