@@ -5,7 +5,6 @@ These are the prerequisites document for Cookpad's Data Engineering technical ex
 To work on the exercise, you will need:
 - Git 
 - Docker 
-- SQL client for PostgreSQL
 - A development environment with either Ruby, Python, Java, or Bash available.
 
 ## Docker
@@ -62,10 +61,6 @@ Here is connection information:
 - database: `cookpad`
 - username: `cookpad`
 - password: `password`
-
-## SQL Client for PostgreSQL
-
-Please setup your choice of SQL client.
 
 ## Development environment
 
