@@ -18,49 +18,39 @@ Please install one for your OS from [https://docs.docker.com/get-docker/](https:
 
 ### Pull docker images
 
-For the exercise, we will be using mainly 2 images:
+For the exercise, we will be using mainly 1 image:
 
-`data-engineering-technical-exercise-nginx`: Provides a Nginx server with the list and log data files
-`data-engineering-technical-exercise-postgre`: Provies a PostgreSQL server with a table, `pv_log`.
+`data-engineering-technical-exercise-postgre`: Provides a PostgreSQL server with a table, `pv_log`.
 
 To download the docker images:
 
 ```
-docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-nginx:latest
 docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-postgre:latest
 ```
 
-### Check docker images
-
-Check nginx environment.
-
-```
-$ docker run -p 8080:80 public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-nginx:latest
-(open another terminal)
-$ curl http://localhost:8080/index.txt
-data_001.csv.gz
-data_002.csv.gz
-....
-data_100.csv.gz
-```
+### Check docker image
 
 Check PostgreSQL environment.
 
-```
-$ docker run -p 5439:5432 public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-postgre:latest
-(open another terminal)
-$ psql -h localhost -p 5439 -U cookpad cookpad
-Password for user cookpad:
-Pager usage is off.
-psql (13.2, server 13.3 (Debian 13.3-1.pgdg100+1))
-Type "help" for help.
+Tables can be found in the `cookpad` schema.
 
-cookpad 13:48:03 # \dt
-         List of relations
- Schema |  Name  | Type  |  Owner
---------+--------+-------+---------
- public | pv_log | table | cookpad
-(1 row)
+```
+cookpad 15:57:50 # \d
+               List of relations
+ Schema  |        Name        | Type  |  Owner  
+---------+--------------------+-------+---------
+ cookpad | comments           | table | cookpad
+ cookpad | cooksnaps          | table | cookpad
+ cookpad | images             | table | cookpad
+ cookpad | pv_log_001         | table | cookpad
+ cookpad | pv_log_002         | view  | cookpad
+ cookpad | pv_log_003         | view  | cookpad
+ cookpad | pv_log_004         | view  | cookpad
+ cookpad | recipe_ingredients | table | cookpad
+ cookpad | recipe_steps       | table | cookpad
+ cookpad | recipes            | table | cookpad
+ cookpad | users              | table | cookpad
+(11 rows)
 ```
 
 Note: If you don't have the `psql` command, please check connection with your SQL client.
