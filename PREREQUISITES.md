@@ -3,33 +3,40 @@
 These are the prerequisites document for Cookpad's Data Engineering technical exercise.
 
 To work on the exercise, you will need:
-- Git 
-- Docker 
+
+- Git
+- Docker
 - A development environment with either Ruby, Python, Java, or Bash available.
 
 ## Docker
 
-For the exercise, we have built a few images that will be used during the exercise. Please, follow the sections below to make sure you have access to the images and you are able to run them.
+For the exercise, we will use a docker container environment.
+Please follow the sections below to make sure you have access to the images and you are able to run them.
 
 ## Install Docker
 
 Please install one for your OS from [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
 
-### Pull docker images
+### Run the docker image
 
-For the exercise, we will be using mainly 1 image:
-
-`data-engineering-technical-exercise-postgre`: Provides a PostgreSQL server with a table, `pv_log`.
-
-To download the docker images:
+Please run following command to download and run the docker image.
 
 ```
-docker pull public.ecr.aws/z2e1v6f7/data-engineering-technical-exercise-postgre:latest
+$ docker run -p 5439:5432 public.ecr.aws/z2e1v6f7/data-engineering-technical-exercise-postgre:latest
 ```
 
-### Check docker image
+### Check the docker image
 
-Check PostgreSQL environment.
+The container has a PostgreSQL DB running on it
+Please check connectivity for the DB.
+
+Here is connection information:
+
+- host: `localhost`
+- port: 5439
+- database: `cookpad`
+- username: `cookpad`
+- password: `password`
 
 Tables can be found in the `cookpad` schema.
 
@@ -51,16 +58,6 @@ cookpad 14:57:04 # \dt
  cookpad | users              | table | cookpad
 (11 rows)
 ```
-
-Note: If you don't have the `psql` command, please check connection with your SQL client.
-
-Here is connection information:
-
-- host: `localhost`
-- port: 5439
-- database: `cookpad`
-- username: `cookpad`
-- password: `password`
 
 ## Development environment
 
