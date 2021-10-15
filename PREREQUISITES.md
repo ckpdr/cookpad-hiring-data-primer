@@ -25,7 +25,7 @@ For the exercise, we will be using mainly 1 image:
 To download the docker images:
 
 ```
-docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-postgre:latest
+docker pull public.ecr.aws/z2e1v6f7/data-engineering-technical-exercise-postgre:latest
 ```
 
 ### Check docker image
@@ -35,17 +35,17 @@ Check PostgreSQL environment.
 Tables can be found in the `cookpad` schema.
 
 ```
-cookpad 15:57:50 # \d
+cookpad 14:57:04 # \dt
                List of relations
- Schema  |        Name        | Type  |  Owner  
+ Schema  |        Name        | Type  |  Owner
 ---------+--------------------+-------+---------
  cookpad | comments           | table | cookpad
  cookpad | cooksnaps          | table | cookpad
  cookpad | images             | table | cookpad
  cookpad | pv_log_001         | table | cookpad
- cookpad | pv_log_002         | view  | cookpad
- cookpad | pv_log_003         | view  | cookpad
- cookpad | pv_log_004         | view  | cookpad
+ cookpad | pv_log_002         | table | cookpad
+ cookpad | pv_log_003         | table | cookpad
+ cookpad | pv_log_004         | table | cookpad
  cookpad | recipe_ingredients | table | cookpad
  cookpad | recipe_steps       | table | cookpad
  cookpad | recipes            | table | cookpad
