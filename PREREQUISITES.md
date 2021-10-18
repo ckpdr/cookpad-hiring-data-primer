@@ -22,7 +22,7 @@ Please install one for your OS from [https://docs.docker.com/get-docker/](https:
 Please run following command to download and run the docker image.
 
 ```
-$ docker run -p 5439:5432 public.ecr.aws/z2e1v6f7/data-engineering-technical-exercise-postgre:latest
+$ docker run -p 5439:5432 public.ecr.aws/z2e1v6f7/data-engineering-technical-exercise-postgre:1
 ```
 
 ### Check the docker image
