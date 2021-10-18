@@ -3,32 +3,67 @@
 These are the prerequisites document for Cookpad's Data Engineering technical exercise.
 
 To work on the exercise, you will need:
-
-- Git
-- Docker
+- Git 
+- Docker 
+- SQL client for PostgreSQL
 - A development environment with either Ruby, Python, Java, or Bash available.
 
 ## Docker
 
-For the exercise, we will use a docker container environment.
-Please follow the sections below to make sure you have access to the images and you are able to run them.
+For the exercise, we have built a few images that will be used during the exercise. Please, follow the sections below to make sure you have access to the images and you are able to run them.
 
 ## Install Docker
 
 Please install one for your OS from [https://docs.docker.com/get-docker/](https://docs.docker.com/get-docker/).
 
-### Run the docker image
+### Pull docker images
 
-Please run following command to download and run the docker image.
+For the exercise, we will be using mainly 2 images:
+
+`data-engineering-technical-exercise-nginx`: Provides a Nginx server with the list and log data files
+`data-engineering-technical-exercise-postgre`: Provies a PostgreSQL server with a table, `pv_log`.
+
+To download the docker images:
 
 ```
-$ docker run -p 5439:5432 public.ecr.aws/z2e1v6f7/data-engineering-technical-exercise-postgre:1
+docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-nginx:latest
+docker pull public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-postgre:latest
 ```
 
-### Check the docker image
+### Check docker images
 
-The container has a PostgreSQL DB running on it
-Please check connectivity for the DB.
+Check nginx environment.
+
+```
+$ docker run -p 8080:80 public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-nginx:latest
+(open another terminal)
+$ curl http://localhost:8080/index.txt
+data_001.csv.gz
+data_002.csv.gz
+....
+data_100.csv.gz
+```
+
+Check PostgreSQL environment.
+
+```
+$ docker run -p 5439:5432 public.ecr.aws/m4h2e8g9/data-engineering-technical-exercise-postgre:latest
+(open another terminal)
+$ psql -h localhost -p 5439 -U cookpad cookpad
+Password for user cookpad:
+Pager usage is off.
+psql (13.2, server 13.3 (Debian 13.3-1.pgdg100+1))
+Type "help" for help.
+
+cookpad 13:48:03 # \dt
+         List of relations
+ Schema |  Name  | Type  |  Owner
+--------+--------+-------+---------
+ public | pv_log | table | cookpad
+(1 row)
+```
+
+Note: If you don't have the `psql` command, please check connection with your SQL client.
 
 Here is connection information:
 
@@ -38,26 +73,9 @@ Here is connection information:
 - username: `cookpad`
 - password: `password`
 
-Tables can be found in the `cookpad` schema.
+## SQL Client for PostgreSQL
 
-```
-cookpad 14:57:04 # \dt
-               List of relations
- Schema  |        Name        | Type  |  Owner
----------+--------------------+-------+---------
- cookpad | comments           | table | cookpad
- cookpad | cooksnaps          | table | cookpad
- cookpad | images             | table | cookpad
- cookpad | pv_log_001         | table | cookpad
- cookpad | pv_log_002         | table | cookpad
- cookpad | pv_log_003         | table | cookpad
- cookpad | pv_log_004         | table | cookpad
- cookpad | recipe_ingredients | table | cookpad
- cookpad | recipe_steps       | table | cookpad
- cookpad | recipes            | table | cookpad
- cookpad | users              | table | cookpad
-(11 rows)
-```
+Please setup your choice of SQL client.
 
 ## Development environment
 
