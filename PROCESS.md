@@ -4,7 +4,7 @@ Someone from our technical team will grant you access to a private Github repo a
 been pre-arranged with you. The repo will contain the instructions with the problem's description and
 (possibly) some code examples.
 
-You should work on the exercise for up to 180 minutes.
+We suggest you shouldn't need to spend more than 2 hours.
 
 **Note any proposed improvements in `IMPROVEMENTS.md`**. You might identify ways in which your solution,
 and/or the codebase in general, can be improved, but not have the time to implement those changes. There
